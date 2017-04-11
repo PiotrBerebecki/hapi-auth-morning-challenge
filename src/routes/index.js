@@ -1,5 +1,6 @@
 module.exports = [
   './login',
-  './home'
+  './home',
+  './restricted'
 ]
   .map(require);

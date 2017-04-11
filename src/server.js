@@ -21,7 +21,6 @@ server.register([vision, hapiAuthBasic], function (err) {
     path: 'views'
   });
 
-  // Add an authentication strategy here
   server.auth.strategy('simple', 'basic', { validateFunc: basicValidate });
 
   server.route(routes);
