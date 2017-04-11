@@ -4,7 +4,7 @@ module.exports = {
   config: {
     auth: {
       strategy: 'simple',
-      scope: 'admin' // can also be an array
+      scope: 'admin' // ['admin', 'user'] can also be an array
     }
   },
   handler: function (request, reply) {

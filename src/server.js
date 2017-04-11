@@ -23,6 +23,8 @@ server.register([vision, hapiAuthBasic], function (err) {
 
   server.auth.strategy('simple', 'basic', { validateFunc: basicValidate });
 
+  server.auth.default('simple'); // then you do not have to manually set it up on all routes
+
   server.route(routes);
 });
 
