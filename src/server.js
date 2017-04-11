@@ -1,6 +1,7 @@
 const Hapi = require('hapi');
 const handlebars = require('handlebars');
-const vision = require('vision')
+const vision = require('vision');
+const hapiAuthBasic = require('hapi-auth-basic');
 
 const routes = require('./routes');
 
@@ -13,7 +14,7 @@ server.connection({
   port: 4000
 });
 
-server.register([vision], function (err) {
+server.register([vision, hapiAuthBasic], function (err) {
   if (err) throw err;
 
   server.views({
