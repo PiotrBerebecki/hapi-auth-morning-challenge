@@ -5,7 +5,6 @@ const hapiAuthBasic = require('hapi-auth-basic');
 
 const routes = require('./routes');
 
-// The validation function(s) you have written
 const basicValidate = require('../lib/validate');
 
 var server = new Hapi.Server();
@@ -23,6 +22,7 @@ server.register([vision, hapiAuthBasic], function (err) {
   });
 
   // Add an authentication strategy here
+  server.auth.strategy('simple', 'basic', { validateFunc: basicValidate });
 
   server.route(routes);
 });
